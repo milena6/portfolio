@@ -1,6 +1,6 @@
-import { defineConfig, devices } from '@playwright/test';
+import { PlaywrightTestConfig, devices } from '@playwright/test'
 
-export default defineConfig({
+const config: PlaywrightTestConfig = {
   testDir: 'tests',
   fullyParallel: true,
   retries: 1,
@@ -8,7 +8,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: 'https://testpages.eviltester.com/styled/apps/7charval/simple7charvalidation.html',
+    baseURL: process.env.BASE_URL,
     trace: 'on-first-retry',
   },
   projects: [
@@ -16,5 +16,7 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-  ]
-});
+  ],
+}
+
+export default config

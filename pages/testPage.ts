@@ -1,11 +1,11 @@
-import { Page } from "playwright/test"
+import { Page } from 'playwright/test'
 
 export function TestPage(page: Page) {
-    const input = page.locator('type=text')
-    const checkInputButton = page.getByRole('button', { name: 'Validate' })
+  const input = page.locator('input[name="characters"]')
+  const checkInputButton = page.locator('input[name="validate"]')
 
-    return{
-        input,
-        checkInputButton
-    }
+  return {
+    input,
+    checkInputButton,
+  }
 }

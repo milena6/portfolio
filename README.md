@@ -1,13 +1,10 @@
 # portfolio
 
-Instal node, yarn and playwright
+- node (v.20.9.0)
 
-todo:
-1. readme
-2. reporter
-3. page
-4. test (parameterized)
-5. expect, check options:
-a. await expect(page.getByText('Invalid Value')).toBeAttached();
-b. 
+Run
 
+1. `yarn`
+2. `yarn playwright install`
+3. `yarn playwright test` - to run tests in headless mode
+4. `yarn playwright test --ui` - to run tests in headed mode
